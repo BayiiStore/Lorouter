@@ -8,37 +8,37 @@
 .fonts-loaded .material-symbols-outlined { visibility: visible; }
 
 /* ============================================================
-   9Router palette — adopted from 9remote_private/web
-   Brand orange (dark) / soft coral (light), neutral warm bases
+   LoRouter palette — icy electric blue on blue-black bases
+   Brand blue (dark & light), cool neutral surfaces
    ============================================================ */
 :root {
-  /* Brand scale (light) - centered on #E56A4A */
-  --color-brand-50: #fdf1ed;
-  --color-brand-100: #fadccf;
-  --color-brand-200: #f4b59c;
-  --color-brand-300: #ee8d6a;
-  --color-brand-400: #ea7855;
-  --color-brand-500: #E56A4A;
-  --color-brand-600: #cc5236;
-  --color-brand-700: #a64027;
-  --color-brand-800: #7a2f1d;
-  --color-brand-900: #4d1e12;
+  /* Brand scale (light) - centered on #1E6BFF (electric blue) */
+  --color-brand-50: #e8f1ff;
+  --color-brand-100: #cfe1ff;
+  --color-brand-200: #9dc2ff;
+  --color-brand-300: #6ba0ff;
+  --color-brand-400: #3d82ff;
+  --color-brand-500: #1E6BFF;
+  --color-brand-600: #1554d6;
+  --color-brand-700: #103fa6;
+  --color-brand-800: #0b2c73;
+  --color-brand-900: #071b47;
 
   /* Primary (legacy alias for backward compat with existing components) */
   --color-primary: var(--color-brand-500);
   --color-primary-hover: var(--color-brand-600);
 
-  /* Surfaces & backgrounds (light) */
-  --color-bg: #FDFAF6;
-  --color-bg-alt: #F7F3EE;
+  /* Surfaces & backgrounds (light) - cool tinted */
+  --color-bg: #f5f8fd;
+  --color-bg-alt: #eef2fa;
   --color-surface: #ffffff;
-  --color-surface-2: #f4f4f5;
-  --color-surface-3: #e7e7e9;
-  --color-sidebar: rgba(244, 241, 236, 0.85);
+  --color-surface-2: #eef1f7;
+  --color-surface-3: #e0e5ef;
+  --color-sidebar: rgba(238, 242, 250, 0.85);
 
   /* Borders */
-  --color-border: #e5e7eb;
-  --color-border-subtle: #f1f1f3;
+  --color-border: #dbe2ee;
+  --color-border-subtle: #eef2f8;
 
   /* Text */
   --color-text: #0a0a0a;
@@ -58,43 +58,43 @@
 
   /* Shadows */
   --shadow-soft: 0 1px 2px 0 rgba(0,0,0,0.04);
-  --shadow-warm: 0 2px 12px -2px rgba(229, 106, 74, 0.18);
-  --shadow-elevated: 0 12px 28px -4px rgba(60, 50, 45, 0.06);
+  --shadow-warm: 0 2px 12px -2px rgba(30, 107, 255, 0.20);
+  --shadow-elevated: 0 12px 28px -4px rgba(15, 23, 42, 0.08);
   --shadow-elev:
     inset 0 1px 0 0 rgba(255,255,255,0.8),
     0 1px 2px rgba(15,23,42,0.04),
     0 12px 36px -8px rgba(15,23,42,0.10);
-  --shadow-focus: 0 0 0 3px rgba(229,106,74,0.18);
+  --shadow-focus: 0 0 0 3px rgba(30,107,255,0.20);
 
   color-scheme: light;
 }
 
 .dark {
-  /* Brand scale (dark) - centered on #E56A4A, same as light for consistency */
-  --color-brand-50: #fdf1ed;
-  --color-brand-100: #fadccf;
-  --color-brand-200: #f4b59c;
-  --color-brand-300: #ee8d6a;
-  --color-brand-400: #ea7855;
-  --color-brand-500: #E56A4A;
-  --color-brand-600: #cc5236;
-  --color-brand-700: #a64027;
-  --color-brand-800: #7a2f1d;
-  --color-brand-900: #4d1e12;
+  /* Brand scale (dark) - icy electric blue, brighter for contrast on blue-black */
+  --color-brand-50: #e8f1ff;
+  --color-brand-100: #cfe1ff;
+  --color-brand-200: #9dc2ff;
+  --color-brand-300: #6ba0ff;
+  --color-brand-400: #3d82ff;
+  --color-brand-500: #2f80ff;
+  --color-brand-600: #1e6bff;
+  --color-brand-700: #1554d6;
+  --color-brand-800: #103fa6;
+  --color-brand-900: #0b2c73;
 
-  --color-primary: #E56A4A;
-  --color-primary-hover: #cc5236;
+  --color-primary: #2f80ff;
+  --color-primary-hover: #1e6bff;
 
-  /* Surfaces (dark - Claude-like neutral warm) */
-  --color-bg: #1a1a1a;
-  --color-bg-alt: #1F1F1E;
-  --color-surface: #262626;
-  --color-surface-2: #303030;
-  --color-surface-3: #3a3a3a;
-  --color-sidebar: rgba(30, 30, 30, 0.85);
+  /* Surfaces (dark - blue-black / navy mix) */
+  --color-bg: #080b14;
+  --color-bg-alt: #0b1020;
+  --color-surface: #101728;
+  --color-surface-2: #182036;
+  --color-surface-3: #222c45;
+  --color-sidebar: rgba(10, 14, 24, 0.85);
 
-  --color-border: #333333;
-  --color-border-subtle: #2a2a2a;
+  --color-border: #263149;
+  --color-border-subtle: #1a2236;
 
   --color-text: #ededed;
   --color-text-main: #ededed;
@@ -107,13 +107,13 @@
   --color-info: #60a5fa;
 
   --shadow-soft: 0 1px 2px 0 rgba(0,0,0,0.3);
-  --shadow-warm: 0 2px 12px -2px rgba(229, 106, 74, 0.25);
+  --shadow-warm: 0 2px 12px -2px rgba(30, 107, 255, 0.25);
   --shadow-elevated: 0 12px 28px -4px rgba(0, 0, 0, 0.45);
   --shadow-elev:
     inset 0 1px 0 0 rgba(255,255,255,0.06),
     0 1px 2px rgba(0,0,0,0.4),
     0 16px 48px -8px rgba(0,0,0,0.55);
-  --shadow-focus: 0 0 0 3px rgba(229, 106, 74, 0.18);
+  --shadow-focus: 0 0 0 3px rgba(30, 107, 255, 0.18);
 
   color-scheme: dark;
 }
@@ -171,14 +171,14 @@ select {
   --color-info: var(--color-info);
 
   /* Static fallbacks (explicit per-mode usage if needed) */
-  --color-bg-light: #FCFBF9;
-  --color-bg-dark: #1a1a1a;
+  --color-bg-light: #f5f8fd;
+  --color-bg-dark: #080b14;
   --color-surface-light: #ffffff;
-  --color-surface-dark: #262626;
-  --color-sidebar-light: #F4F1EC;
-  --color-sidebar-dark: #1F1F1E;
-  --color-border-light: #e5e7eb;
-  --color-border-dark: #333333;
+  --color-surface-dark: #101728;
+  --color-sidebar-light: #EEF2FA;
+  --color-sidebar-dark: #0b1020;
+  --color-border-light: #dbe2ee;
+  --color-border-dark: #263149;
   --color-text-main-light: #0a0a0a;
   --color-text-main-dark: #ededed;
   --color-text-muted-light: #6B7280;
@@ -210,11 +210,11 @@ body {
 
 /* Selection - brand-tinted */
 ::selection {
-  background-color: rgba(229, 106, 74, 0.25);
+  background-color: rgba(30, 107, 255, 0.25);
   color: var(--color-primary);
 }
 .dark ::selection {
-  background-color: rgba(229, 106, 74, 0.3);
+  background-color: rgba(30, 107, 255, 0.3);
   color: var(--color-brand-300);
 }
 
@@ -241,19 +241,19 @@ input, textarea {
 /* Thin horizontal scrollbar - brand colored */
 .scroll-thin-x {
   scrollbar-width: thin;
-  scrollbar-color: rgba(229, 106, 74, 0.55) transparent;
+  scrollbar-color: rgba(30, 107, 255, 0.55) transparent;
 }
 .dark .scroll-thin-x {
-  scrollbar-color: rgba(229, 106, 74, 0.55) transparent;
+  scrollbar-color: rgba(30, 107, 255, 0.55) transparent;
 }
 .scroll-thin-x::-webkit-scrollbar { height: 3px; }
 .scroll-thin-x::-webkit-scrollbar-track { background: transparent; }
 .scroll-thin-x::-webkit-scrollbar-thumb {
-  background: rgba(229, 106, 74, 0.55);
+  background: rgba(30, 107, 255, 0.55);
   border-radius: 3px;
 }
 .dark .scroll-thin-x::-webkit-scrollbar-thumb {
-  background: rgba(229, 106, 74, 0.55);
+  background: rgba(30, 107, 255, 0.55);
 }
 
 /* Reusable elevated card */
@@ -356,12 +356,12 @@ button:disabled,
 
 @keyframes border-glow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(229, 106, 74, 0.3), 0 0 10px rgba(229, 106, 74, 0.2);
-    border-color: rgba(229, 106, 74, 0.5);
+    box-shadow: 0 0 5px rgba(30, 107, 255, 0.3), 0 0 10px rgba(30, 107, 255, 0.2);
+    border-color: rgba(30, 107, 255, 0.5);
   }
   50% {
-    box-shadow: 0 0 10px rgba(229, 106, 74, 0.5), 0 0 20px rgba(229, 106, 74, 0.3);
-    border-color: rgba(229, 106, 74, 0.8);
+    box-shadow: 0 0 10px rgba(30, 107, 255, 0.5), 0 0 20px rgba(30, 107, 255, 0.3);
+    border-color: rgba(30, 107, 255, 0.8);
   }
 }
 .animate-border-glow { animation: border-glow 2s ease-in-out infinite; }
@@ -394,8 +394,8 @@ button:disabled,
   100% { transform: translateX(220%) skewX(-20deg); }
 }
 @keyframes ctaGlowPulse {
-  0%, 100% { box-shadow: 0 8px 24px -8px rgba(229, 106, 74, 0.45), 0 0 0 0 rgba(229, 106, 74, 0.5); }
-  50% { box-shadow: 0 12px 32px -8px rgba(229, 106, 74, 0.6), 0 0 0 8px rgba(229, 106, 74, 0); }
+  0%, 100% { box-shadow: 0 8px 24px -8px rgba(30, 107, 255, 0.45), 0 0 0 0 rgba(30, 107, 255, 0.5); }
+  50% { box-shadow: 0 12px 32px -8px rgba(30, 107, 255, 0.6), 0 0 0 8px rgba(30, 107, 255, 0); }
 }
 .btn-cta {
   position: relative;
@@ -421,13 +421,13 @@ button:disabled,
 .dot-grid-bg {
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(229, 106, 74, 0.10) 0%, transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(229, 106, 74, 0.06) 0%, transparent 40%);
+    radial-gradient(circle at 15% 20%, rgba(30, 107, 255, 0.10) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(30, 107, 255, 0.06) 0%, transparent 40%);
 }
 .dark .dot-grid-bg {
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(229, 106, 74, 0.18) 0%, transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(229, 106, 74, 0.10) 0%, transparent 40%);
+    radial-gradient(circle at 15% 20%, rgba(30, 107, 255, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(30, 107, 255, 0.10) 0%, transparent 40%);
 }
 
 /* Landing-style faint grid overlay (use absolute pos inside relative parent) */

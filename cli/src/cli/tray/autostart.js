@@ -3,8 +3,8 @@ const path = require("path");
 const os = require("os");
 const { execSync } = require("child_process");
 
-const APP_NAME = "9router";
-const APP_LABEL = "com.9router.autostart";
+const APP_NAME = "lorouter";
+const APP_LABEL = "com.lorouter.autostart";
 
 /**
  * Resolve the absolute path to this package's cli.js.
@@ -182,9 +182,9 @@ function enableMacOS(cliPath) {
     <key>KeepAlive</key>
     <false/>
     <key>StandardOutPath</key>
-    <string>/tmp/9router.log</string>
+    <string>/tmp/lorouter.log</string>
     <key>StandardErrorPath</key>
-    <string>/tmp/9router.error.log</string>
+    <string>/tmp/lorouter.error.log</string>
 </dict>
 </plist>`;
 
@@ -280,8 +280,8 @@ function enableLinux(cliPath) {
 
   const desktopContent = `[Desktop Entry]
 Type=Application
-Name=9Router
-Comment=9Router API Proxy
+Name=LoRouter
+Comment=LoRouter API Proxy
 Exec=${nodePath} ${routerScript} --tray --skip-update
 Hidden=false
 NoDisplay=false

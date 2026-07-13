@@ -49,8 +49,8 @@ function collectAppPids() {
       const lines = output.split("\n").slice(1).filter(l => l.trim());
       lines.forEach(line => {
         const lower = line.toLowerCase();
-        // Match anything running from 9router install dir or wrapper cli.js
-        const isAppProcess = lower.includes("9router") ||
+        // Match anything running from lorouter install dir or wrapper cli.js
+        const isAppProcess = lower.includes("lorouter") ||
           lower.includes("next-server") ||
           lower.includes("\\bin\\app\\") ||
           lower.includes("/bin/app/") ||
@@ -77,7 +77,7 @@ function collectAppPids() {
     try {
       const output = execSync("ps aux 2>/dev/null", { encoding: "utf8", timeout: KILL_TIMEOUT_MS });
       output.split("\n").forEach(line => {
-        const isAppProcess = line.includes("9router") ||
+        const isAppProcess = line.includes("lorouter") ||
           line.includes("next-server") ||
           line.includes("cloudflared") ||
           line.includes("/bin/app/") ||

@@ -139,7 +139,8 @@ export default function LoginPage() {
       <div className="landing-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
       <div className="relative z-10 w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary mb-2">9Router</h1>
+          <img src="/logo.jpg" alt="LoRouter" className="mx-auto mb-4 h-16 w-16 rounded-2xl object-cover shadow-[var(--shadow-warm)] ring-1 ring-primary/30" />
+          <h1 className="text-3xl font-bold text-primary mb-2">LoRouter</h1>
           <p className="text-text-muted">
             {authMode === "oidc" && oidcConfigured
               ? "Sign in with your OIDC provider to access the dashboard"
