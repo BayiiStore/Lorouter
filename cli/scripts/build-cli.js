@@ -279,6 +279,15 @@ if (fs.existsSync(updaterSrc)) {
 
 // Step 8: Build MITM server (config driven - see app/cli/scripts/buildMitm.js)
 console.log("8️⃣  Building MITM server...");
+// buildMitm.js needs esbuild (a cli/ devDependency). If the caller only ran
+// `npm install` at the repo root, cli/node_modules won't have it — install the
+// cli/ deps on demand so `npm run cli:pack` works from a fresh checkout.
+try {
+  require.resolve("esbuild", { paths: [cliDir] });
+} catch {
+  console.log("ℹ️  esbuild not found — installing cli/ dependencies...");
+  execSync("npm install", { stdio: "inherit", cwd: cliDir });
+}
 try {
   execSync("node scripts/buildMitm.js", { stdio: "inherit", cwd: cliDir });
   console.log("✅ MITM server build completed\n");
