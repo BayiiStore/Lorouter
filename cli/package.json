@@ -1,9 +1,9 @@
 {
-  "name": "9router",
+  "name": "lorouter",
   "version": "0.5.30",
-  "description": "9Router CLI - Start and manage 9Router server",
+  "description": "LoRouter CLI - Start and manage LoRouter server",
   "bin": {
-    "9router": "./cli.js"
+    "lorouter": "./cli.js"
   },
   "files": [
     "cli.js",
@@ -34,6 +34,7 @@
     "node": ">=18.0.0"
   },
   "keywords": [
+    "lorouter",
     "9router",
     "cli",
     "proxy",
