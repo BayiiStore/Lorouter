@@ -137,11 +137,29 @@ const standaloneRoot = path.join(appDir, ".next", "standalone");
 const standaloneRootResolved = path.join(buildDistDir, "standalone");
 let standaloneRootToUse = fs.existsSync(standaloneRootResolved) ? standaloneRootResolved : standaloneRoot;
 // Next.js 16 nests standalone output under the project name when NEXT_TRACING_ROOT_MODE=workspace
-// e.g. .next-cli-build/standalone/9router/server.js
-const pkgName = path.basename(appDir);
-const nestedRoot = path.join(standaloneRootToUse, pkgName);
-if (fs.existsSync(path.join(nestedRoot, "server.js")) && !fs.existsSync(path.join(standaloneRootToUse, "server.js"))) {
-  console.log(`ℹ️  Detected nested standalone output: ${pkgName}/`);
+// e.g. .next-cli-build/standalone/<name>/server.js. The nested folder name may be the
+// repo folder basename OR the app package.json "name" — they don't always match — so try
+// both, then fall back to scanning for any single subdir that contains server.js.
+function findNestedStandalone(root) {
+  if (fs.existsSync(path.join(root, "server.js"))) return null; // not nested
+  const candidates = [path.basename(appDir)];
+  try { candidates.push(require(path.join(appDir, "package.json")).name); } catch {}
+  for (const name of candidates) {
+    if (name && fs.existsSync(path.join(root, name, "server.js"))) return path.join(root, name);
+  }
+  // Last resort: scan one level deep for a dir holding server.js
+  try {
+    for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
+      if (entry.isDirectory() && fs.existsSync(path.join(root, entry.name, "server.js"))) {
+        return path.join(root, entry.name);
+      }
+    }
+  } catch {}
+  return null;
+}
+const nestedRoot = findNestedStandalone(standaloneRootToUse);
+if (nestedRoot) {
+  console.log(`ℹ️  Detected nested standalone output: ${path.basename(nestedRoot)}/`);
   standaloneRootToUse = nestedRoot;
 }
 const standaloneApp = fs.existsSync(path.join(standaloneRootToUse, "server.js"))
